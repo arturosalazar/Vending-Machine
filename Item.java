@@ -8,4 +8,10 @@ public class Item {
         this.price = price;
         this.quantity = quantity;
     }
+
+    public Item (Item source){
+        this.name = source.name;
+        this.price = source.price;
+        this.quantity = source.quantity;
+    }
 }
