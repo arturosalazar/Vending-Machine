@@ -16,7 +16,7 @@ public class Machine {
     }
 
     public void setItem(Item item, int row, int spot){
-        items[row][spot] = new Item(item);
+        this.items[row][spot] = new Item(item);
     }
     
     /**
@@ -30,4 +30,13 @@ public class Machine {
      *      • if so: decreases its quantity by one and returns true.
      *      • otherwise: returns false.
      */
+
+     public boolean dispense(int row, int spot){
+        int itemQuantity = this.items[row][spot].getQuantity();
+        if ( itemQuantity > 0){
+            itemQuantity--;
+            this.items[row][spot].setQuantity(itemQuantity);
+        }
+        return false;
+     }
 }
