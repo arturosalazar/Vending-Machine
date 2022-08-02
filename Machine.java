@@ -11,8 +11,9 @@ public class Machine {
         }
     }
 
-
-
+    public Item getItem (int row, int spot){
+        return new Item(items[row][spot]);
+    }
     
     /**
      * Function name – dispense
