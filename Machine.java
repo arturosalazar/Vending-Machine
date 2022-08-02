@@ -31,12 +31,29 @@ public class Machine {
      *      • otherwise: returns false.
      */
 
-     public boolean dispense(int row, int spot){
-        int itemQuantity = this.items[row][spot].getQuantity();
+    public boolean dispense(int row, int spot){
+    int itemQuantity = this.items[row][spot].getQuantity();
         if ( itemQuantity > 0){
             itemQuantity--;
             this.items[row][spot].setQuantity(itemQuantity);
         }
-        return false;
-     }
+            return false;
+    }
+
+    public String toString(){
+
+        String temp = "";
+        for (int i = 0; i < this.items.length; i++) {
+            temp += "\t";
+            for (int j = 0; j < this.items[i].length; j++) {
+                temp += this.items[i][j].toString() + " ";
+            }
+            temp += "\n\n";
+        }
+
+        temp += "\t************************************************";
+        return temp;
+    }
+
+
 }
