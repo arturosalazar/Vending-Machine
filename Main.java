@@ -15,7 +15,8 @@ public class Main {
         };
 
         Machine vending = new Machine(items);
-        
+
+        //Test: using the dispense function should reduce the an item's quantity by one. Two calls should reduce the quantity by 2
         vending.dispense(0, 0);
         vending.dispense(0, 0);
 
