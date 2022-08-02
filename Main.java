@@ -1,3 +1,5 @@
+import javax.swing.plaf.synth.SynthOptionPaneUI;
+
 public class Main {
     public static void main(String[] args) {
 
@@ -14,6 +16,11 @@ public class Main {
 
         Machine vending = new Machine(items);
         
+        vending.dispense(0, 0);
+        vending.dispense(0, 0);
+
+        System.out.println("Expected output: Pepsi: 1.99 (1)");
+        System.out.println("Actual output: " + vending.getItem(0, 0));
     
     }
 }
