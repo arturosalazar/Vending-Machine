@@ -14,23 +14,6 @@ public class Main {
 
         Machine vending = new Machine(items);
         
-        //Test: Changing outside items[][] array should not change the items[][] array in the machine object
-        items[2][1].setPrice(2.99);
-        System.out.println("\nExpected Output:  C-Cola: 1.49 (2)");
-        System.out.println("Actual Output: " + vending.getItem(2, 1)); //Expected output: C-Cola: 1.49 (2). Incorrect if C-Cola: 2.99 (2)
-
-        //Test: Getting an item from the machine object items[][] array and changing it should not change the item stored in the machine object
-        Item testItem = vending.getItem(2, 1);
-        testItem.setPrice(2.99);
-        System.out.println("\nExpected Output:  C-Cola: 1.49 (2)");
-        System.out.println("Actual Output: " + vending.getItem(2, 1)); //Expected output: C-Cola: 1.49 (2). Incorrect if C-Cola: 2.99 (2)
-
-        //Test: using the setItem function should change the value in the items[][] array within the machine object
-        vending.setItem(testItem, 2, 1);
-        System.out.println("\nExpected Output:  C-Cola: 2.99 (2)");
-        System.out.println("Actual Output: " + vending.getItem(2, 1)); //Expected output: C-Cola: 2.99 (2). Incorrect if C-Cola: 1.49 (2)
-        
-
-        
+    
     }
 }
