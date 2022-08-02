@@ -16,6 +16,9 @@ public class Main {
 
         System.out.println(vending.getItem(0, 0));
 
+        vending.setItem(new Item("Diet Pepsi", 1.99, 10), 0, 0);
+        System.out.println(vending.getItem(0, 0));
+
         
     }
 }

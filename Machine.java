@@ -14,6 +14,10 @@ public class Machine {
     public Item getItem (int row, int spot){
         return new Item(items[row][spot]);
     }
+
+    public void setItem(Item item, int row, int spot){
+        items[row][spot] = new Item(item);
+    }
     
     /**
      * Function name – dispense
