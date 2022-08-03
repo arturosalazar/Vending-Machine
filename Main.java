@@ -1,4 +1,5 @@
-import javax.swing.plaf.synth.SynthOptionPaneUI;
+import java.util.Scanner;
+
 
 public class Main {
     public static void main(String[] args) {
@@ -17,6 +18,20 @@ public class Main {
         Machine vending = new Machine(items);
 
         System.out.println(vending);
+
+        //Set up scanner and request a row and spot from user
+        Scanner scan = new Scanner(System.in);
+        System.out.print("Pick a row: ");
+        int row = scan.nextInt();
+
+        System.out.print("Pick a spot: ");
+        int spot = scan.nextInt();
+
+        //Dispense drink at requested row and spot. Then print the machine's current status
+        vending.dispense(row, spot);
+        System.out.println("\n" + vending);
+
+
     
     }
 }
