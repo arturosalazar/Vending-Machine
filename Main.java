@@ -19,18 +19,36 @@ public class Main {
 
         System.out.println(vending);
 
-        //Set up scanner and request a row and spot from user
+        //Set up scanner
         Scanner scan = new Scanner(System.in);
-        System.out.print("Pick a row: ");
-        int row = scan.nextInt();
 
-        System.out.print("Pick a spot: ");
-        int spot = scan.nextInt();
+        while(true){
+            //request a row and spot from user
+            System.out.print("Pick a row: ");
+            int row = scan.nextInt();
 
-        //Dispense drink at requested row and spot. Then print the machine's current status
-        vending.dispense(row, spot);
-        System.out.println("\n" + vending);
+            System.out.print("Pick a spot in the row: ");
+            int spot = scan.nextInt();
 
+            boolean vendingResult = vending.dispense(row, spot);
+            System.out.println("\n" + vending);
+
+            //Dispense drink at requested row and spot. Then print the machine's current status
+            if (vendingResult){
+                System.out.print("\nEnjoy your drink! Press 1 to purchase another: ");
+            } else {
+                System.out.print("\nSorry, we're out of this item. Press 1 to purchase another: ");
+            }
+            
+            if (scan.nextInt() != 1){
+                break;
+            }
+
+        }
+
+        
+        
+        
 
     
     }
