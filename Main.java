@@ -25,6 +25,7 @@ public class Main {
         //Get how much money the user
         System.out.println("How much money do you have?");
         double userMoney = scan.nextDouble();
+        System.out.println("You have $" + String.format("%.2f",userMoney));
 
         //Check if user has enough money to buy the cheapest drink
         if (userMoney < 1.49) {
@@ -55,19 +56,23 @@ public class Main {
             //If the item is available, deduct the cost from the user's money and print a message. Else explain out of item
             if (vendingResult){
                 userMoney -= selectedItemPrice;
-                System.out.print("\nEnjoy your drink! You now have " + String.format("%.2f",userMoney) + " available. Press 1 to purchase another: ");
+                System.out.print("\nEnjoy your drink! You now have $" + String.format("%.2f",userMoney) + " available. ");
+                if (userMoney < 1.49){
+                    System.out.println("It doesn't look like you have enough money to purchase anything else. Thank you for your business and have a great day!");
+                    break;
+                }
+                else {
+                    System.out.print("Press 1 to purchase another: ");
+                }
             } else {
-                System.out.print("\nSorry, we're out of this item. You still have " + String.format("%.2f",userMoney) + " available. Press 1 to purchase another: ");
+                System.out.print("\nSorry, we're out of this item. You still have $" + String.format("%.2f",userMoney) + " available. Press 1 to purchase another: ");
             }
             
             if (scan.nextInt() != 1){
                 break;
             }
 
-            if (userMoney < 1.49){
-                System.out.println("It doesn't look like you have enough money to purchase anything else. Thank you for your business and have a great day!");
-                break;
-            }
+            
         }
 
         scan.close();
