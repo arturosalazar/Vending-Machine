@@ -65,10 +65,7 @@ public class Main {
             }
         }
 
-        
-        
-        
-
+        scan.close();
     
     }
 }
