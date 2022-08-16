@@ -1,6 +1,6 @@
 # Vending-Machine
 
-A simple "vending machine" program that lets the user select items from a vending machine (provided the quantity of the item is greater than zero.
+A simple "vending machine" program that lets the user select items from a vending machine (provided the quantity of the item is greater than zero).
 
 The user will be shown a greeting and the name, value and quantity of available items. Then they will be prompted to choose which item to take.
 
